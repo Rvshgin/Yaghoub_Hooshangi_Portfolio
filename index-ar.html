@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محفظة أعمال الأستاذ يعقوب هوشنكي</title>
+    <!-- متاتگ‌های Open Graph -->
+    <meta property="og:title" content="محفظة أعمال الأستاذ يعقوب هوشنكي">
+    <meta property="og:description" content="تصميم، تصنيع، وتنفيذ احترافي لخزائن المطبخ والديكور الداخلي بخبرة مهنية تمتد لـ 20 عاماً.">
+    <meta property="og:image" content="https://yourwebsite.com/preview-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_AR">
+
+    <!-- اضافه کردن فونت آوسام برای آیکون‌های شبکه‌های اجتماعی -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* متغیرهای رنگی برای ظاهری شیک و چوبی/مدرن */
+        :root {
+            --bg-color: #fcfcfc;
+            --text-main: #2b2b2b;
+            --text-muted: #666666;
+            --accent: #b48645; /* رنگ طلایی/چوبی ملایم */
+            --header-bg: #1a1a1a;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif; 
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* --- هدر و بیوگرافی --- */
+        header {
+            background-color: var(--header-bg);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--accent);
+            position: relative;
+        }
+
+        /* --- دکمه تغییر زبان --- */
+        .lang-switch {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .lang-switch a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.8rem;
+            border: 1px solid var(--accent);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-switch a:hover, .lang-switch a.active {
+            background-color: var(--accent);
+            color: var(--header-bg);
+            font-weight: bold;
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+        }
+
+        header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            color: var(--accent);
+        }
+
+        .bio {
+            color: #cccccc;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* --- دکمه‌های ارتباطی --- */
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .contact-links a {
+            text-decoration: none;
+            color: var(--header-bg);
+            background-color: var(--accent);
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: 2px solid var(--accent);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-links a:hover {
+            background-color: transparent;
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* --- بخش گالری --- */
+        main {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--header-bg);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+            margin: 0.5rem auto 0;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        /* --- کارت‌های نمونه‌کار --- */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            border-top: 4px solid var(--accent);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .media-wrapper {
+            width: 100%;
+            background-color: #eee;
+            overflow: hidden;
+        }
+
+        .ratio-16-9 { aspect-ratio: 16 / 9; }
+        .ratio-1-1 { aspect-ratio: 1 / 1; }
+
+        .media-wrapper img, 
+        .media-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.2rem;
+            color: var(--header-bg);
+        }
+
+        .card-content p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- فوتر --- */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--header-bg);
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: auto;
+            border-top: 2px solid var(--accent);
+        }
+
+        /* --- رسپانسیو برای موبایل --- */
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            header {
+                padding: 4.5rem 1rem 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- بخش هدر -->
+    <header>
+        <!-- دکمه تغییر زبان -->
+        <div class="lang-switch">
+            <a href="index.html">فارسی</a>
+            <a href="index-ar.html" class="active">العربية</a>
+        </div>
+
+        <div class="profile-container">
+            <!-- عکس پروفایل دایره‌ای -->
+            <img src="assets/images/profile/0815 (11).jpg" alt="صورة المدير" class="profile-img">
+            <h1>يعقوب هوشنكي</h1>
+            
+            <p class="bio">
+               بخبرة تمتد لـ 20 عاماً في مجال تصميم وتصنيع وتنفيذ كافة مشاريع خزائن المطبخ والديكور الداخلي. مزيج من الفن، الدقة، وأفضل المواد لخلق مساحة استثنائية.
+            </p>
+
+            <!-- لینک‌های ارتباطی با آیکون‌های Font Awesome -->
+            <div class="contact-links">
+                <a href="tel:+989904061334">
+                    <i class="fa-solid fa-phone"></i> اتصال هاتفي
+                </a>
+                <a href="https://wa.me/989904061334" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> واتساب
+                </a>
+                <a href="https://t.me/your_id" target="_blank">
+                    <i class="fa-brands fa-telegram"></i> تيليجرام
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- بخش 4 ویدیو (نسبت 16:9) -->
+        <h2 class="section-title">معرض الفيديو</h2>
+        <div class="grid-container">
+            <div class="card">
+                <div class="media-wrapper ratio-16-9">
+                    <video src="assets/videos/1.webm" controls poster="assets/videos/Poster/1.webp"></video>
+                </div>
+                <div class="card-content">
+                    <h3>قص شطب (زاوية 45) بمنشار الألواح</h3>
+                    <p>مشروع المنزل الشخصي للسيد برويزي</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="media-wrapper ratio-16-9">
+                    <video src="assets/videos/2.webm" controls poster="assets/videos/Poster/2.webp"></video>
+                </div>
+                <div class="card-content">
+                    <h3>القطع المشطوبة (زاوية 45)</h3>
+                    <p>القطع المشطوبة لديكور متجر برديس - جم</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="media-wrapper ratio-16-9">
+                    <video src="assets/videos/3.webm" controls poster="assets/videos/Poster/3.webp"></video>
+                </div>
+                <div class="card-content">
+                    <h3>مشروع متجر برديس - جم</h3>
+                    <p>قيد التركيب</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="media-wrapper ratio-16-9">
+                    <video src="assets/videos/4.webm" controls poster="assets/videos/Poster/4.webp"></video>
+                </div>
+                <div class="card-content">
+                    <h3>مشروع السيد رحيمي</h3>
+                    <p>مطبخ فاكيوم بتصميم ممبران</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- بخش 3 عکس (نسبت 16:9) -->
+        <h2 class="section-title">المنظر العام</h2>
+        <div class="grid-container">
+            <div class="card">
+                <div class="media-wrapper ratio-16-9">
+                    <img src="assets/images/16.9/1.webp" alt="المشروع الأول">
+                </div>
+                <div class="card-content">
+                    <h3>مشروع متجر برديس - جم</h3>
+                    <p>تصميم حديث يدمج بين الهاي جلاس (اللامع) والمطفي</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="media-wrapper ratio-16-9">
+                    <img src="assets/images/16.9/2.webp" alt="المشروع الثاني">
+                </div>
+                <div class="card-content">
+                    <h3>مشروع مطبخ السيد صادقي - كنغان</h3>
+                    <p>ديكور المطبخ</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="media-wrapper ratio-16-9">
+                    <img src="assets/images/16.9/3.webp" alt="المشروع الثالث">
+                </div>
+                <div class="card-content">
+                    <h3>خزانة حائط للسيد عدالت - كنغان</h3>
+                    <p>خزانة حائط بنظام الصناديق هاي جلاس أبيض</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- بخش 6 عکس (نسبت 1:1 مربعی) -->
+        <h2 class="section-title">المشاريع</h2>
+        <div class="grid-container">
+            <div class="card">
+                <div class="media-wrapper ratio-1-1">
+                    <img src="assets/images/1.1/1.webp" alt="تفاصيل واحد">
+                </div>
+                <div class="card-content">
+                    <h3>مشروع متجر برديس - جم</h3>
+                    <p>دمج الهاي جلاس والمطفي</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="media-wrapper ratio-1-1">
+                    <img src="assets/images/1.1/2.webp" alt="تفاصيل اثنان">
+                </div>
+                <div class="card-content">
+                    <h3>مشروع معرض السيد أسلوب - جم</h3>
+                    <p>ديكور معرض يدمج بين MDF سوبر مات وتصميم خشبي</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="media-wrapper ratio-1-1">
+                    <img src="assets/images/1.1/3.webp" alt="تفاصيل ثلاثة">
+                </div>
+                <div class="card-content">
+                    <h3>مشروع مطبخ السيد جعفري - كازرون</h3>
+                    <p>هاي جلاس أبيض</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="media-wrapper ratio-1-1">
+                    <img src="assets/images/1.1/4.webp" alt="تفاصيل أربعة">
+                </div>
+                <div class="card-content">
+                    <h3>مشروع مطبخ السيد رضائي - كازرون</h3>
+                    <p>هاي جلاس أبيض</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="media-wrapper ratio-1-1">
+                    <img src="assets/images/1.1/5.webp" alt="تفاصيل خمسة">
+                </div>
+                <div class="card-content">
+                    <h3>مشروع مطبخ السيد خسروي - كنغان</h3>
+                    <p>دمج MDF بتصميم حجري</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="media-wrapper ratio-1-1">
+                    <img src="assets/images/1.1/6.webp" alt="تفاصيل ستة">
+                </div>
+                <div class="card-content">
+                    <h3>مشروع مطبخ السيد مؤذني - جم</h3>
+                    <p>دمج هاي جلاس بتصميم خشب الجوز مع MDF أبيض</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- کپی‌رایت فوتر -->
+    <footer>
+        <p>&copy; 2026 جميع الحقوق محفوظة للأستاذ يعقوب هوشنكي.</p>
+        <p style="font-size: 0.8rem; margin-top: 5px;">صُمم وطُوّر بحب ❤️</p>
+    </footer>
+
+</body>
+</html>
